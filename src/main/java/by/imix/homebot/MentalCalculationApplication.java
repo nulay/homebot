@@ -15,7 +15,7 @@ public class MentalCalculationApplication {
     public static void main(String[] args) {
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            HomeBotWatcher bot = new HomeBotWatcher("HomeWatcherImixBot", "1675766904:AAHKONqBrNczk5M10g8M-T4aeww5ic85rIY");
+            HomeBotWatcher bot = new HomeBotWatcher("HomeWatcherbot", "5324476725:AAE0ISpSU3i0kkiqiXGczgnCNiNZ6QqGp44");
             botsApi.registerBot(bot);
 //            botsApi.registerBot(new HomeBotWatcher(getenv.get("BOT_NAME"), getenv.get("BOT_TOKEN")));
 
