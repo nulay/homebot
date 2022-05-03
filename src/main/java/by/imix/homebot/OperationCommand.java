@@ -10,6 +10,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.List;
 
 /**
@@ -26,9 +27,9 @@ abstract class OperationCommand extends BotCommand {
     /**
      * Отправка ответа пользователю
      */
-    void sendAnswer(AbsSender absSender, Long chatId, List<OperationEnum> operations, String description, String commandName, String userName) {
+    void sendAnswer(AbsSender absSender, Long chatId, String description, String commandName, String userName) {
         try {
-            absSender.execute(createDocument(chatId, operations, description));
+            absSender.execute(createDocument(chatId, description));
         } catch (IOException | IllegalArgumentException e) {
             sendError(absSender, chatId, commandName, userName);
             e.printStackTrace();
@@ -43,8 +44,9 @@ abstract class OperationCommand extends BotCommand {
      * @param operations список типов операций (сложение и/или вычитание)
      * @param fileName имя, которое нужно присвоить файлу
      */
-    private SendDocument createDocument(Long chatId, List<OperationEnum> operations, String fileName) throws IOException {
-        FileInputStream stream = new FileInputStream(new File("D:\\image\\temp\\bp6r0crfjZg.jpg"));
+    private SendDocument createDocument(Long chatId, String fileName) throws IOException {
+        FileInputStream stream = new FileInputStream(new File(Path.of("").toAbsolutePath()+File.separator+"1651481134161" +
+                ".jpg"));
         SendDocument document = new SendDocument();
         document.setChatId(chatId.toString());
         document.setDocument(new InputFile(stream, String.format("%s.jpg", fileName)));

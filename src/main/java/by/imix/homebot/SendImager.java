@@ -30,7 +30,7 @@ public class SendImager extends OperationCommand {
         String userName = (user.getUserName() != null) ? user.getUserName() :
                 String.format("%s %s", user.getLastName(), user.getFirstName());
         //обращаемся к методу суперкласса для формирования файла на сложение и вычитание (за это отвечает метод getPlusMinus() перечисления OperationEnum) и отправки его пользователю
-        sendAnswer(absSender, chat.getId(), OperationEnum.getPlusMinus(), this.getDescription(), this.getCommandIdentifier(), userName);
+        sendAnswer(absSender, chat.getId(), this.getDescription(), this.getCommandIdentifier(), userName);
 //        sendAnswer(absSender, chat.getId(), this.getCommandIdentifier(), userName,
 //                "Давайте начнём! Если Вам нужна помощь, нажмите /help");
         SenderImageTimer senderImageTimer = new SenderImageTimer(telegramLongPollingCommandBot, chat.getId().toString());

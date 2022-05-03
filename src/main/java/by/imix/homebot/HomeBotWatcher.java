@@ -36,7 +36,8 @@ public final class HomeBotWatcher  extends TelegramLongPollingCommandBot {
         this.nonCommand = new NonCommand();
         //регистрируем команды
         register(new StartCommand("start", "Старт"));
-        register(new SendImager("sendme", "Вот", this));
+//        register(new SendImager("sendme", "Вот", this));
+        register(new SendImager("senddenis", "Вот", this));
 //        register(new SendImager("minus", "Вычитание"));
 //        register(new SendImager("plusminus", "Сложение и вычитание"));
 //        register(new HelpCommand("help","Помощь"));

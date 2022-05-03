@@ -21,5 +21,7 @@ public class StartCommand extends ServiceCommand {
         //обращаемся к методу суперкласса для отправки пользователю ответа
         sendAnswer(absSender, chat.getId(), this.getCommandIdentifier(), userName,
                 "Давайте начнём! Если Вам нужна помощь, нажмите /help");
+        sendAnswer(absSender, chat.getId(), this.getCommandIdentifier(), userName,
+                "Если Вам нужна Денис, нажмите /senddenis");
     }
 }

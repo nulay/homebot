@@ -6,6 +6,7 @@ import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.File;
+import java.nio.file.Path;
 
 public class SenderImageTimer implements Runnable{
     private TelegramLongPollingCommandBot telegramLongPollingCommandBot;
@@ -17,10 +18,11 @@ public class SenderImageTimer implements Runnable{
 
     @Override
     public void run() {
-        SendPhoto sendPhoto = SendPhoto.builder().photo(new InputFile(new File("D:\\файлы с работы\\3_zip\\3\\Grow1_files\\de7bb89506ea947af9145c3234922aa1.jpg")))
+        SendPhoto sendPhoto = SendPhoto.builder().photo(new InputFile(new File(Path.of("").toAbsolutePath()+File.separator+"1651481134161" +
+                ".jpg")))
                 .chatId(id).build();
         int i = 0;
-        while (i < 5) {
+        while (i < 1) {
             try {
                 telegramLongPollingCommandBot.execute(sendPhoto);
 
